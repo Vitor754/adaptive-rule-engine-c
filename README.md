@@ -8,12 +8,12 @@ O objetivo deste projeto foi simular uma topologia de rede robusta de um provedo
 
 ## Destaques Técnicos
 * **Linguagem:** C (Focada em gerenciamento de memória de baixo nível e otimização de estruturas).
-* **Algoritmos de Grafos:** Implementada a lógica do **Algoritmo de Dijkstra** para encontrar o "Caminho Mais Curto" (menor custo) entre roteadores com base na métrica $Custo = LarguraDeBandaDeReferência / LarguraDeBandaDoLink$[cite: 272].
-* **Agregação de Links:** Simulação do **LACP** (Protocolo de Controle de Agregação de Links) para somar dinamicamente as larguras de banda de links físicos paralelos em uma única conexão lógica[cite: 279].
-* **Balanceamento de Carga:** O mecanismo lida com cenários de "Múltiplos Caminhos de Custo Igual", distribuindo o tráfego por várias rotas quando os custos são idênticos[cite: 277].
+* **Algoritmos de Grafos:** Implementada a lógica do **Algoritmo de Dijkstra** para encontrar o "Caminho Mais Curto" (menor custo) entre roteadores com base na métrica $Custo = LarguraDeBandaDeReferência / LarguraDeBandaDoLink$.
+* **Agregação de Links:** Simulação do **LACP** (Protocolo de Controle de Agregação de Links) para somar dinamicamente as larguras de banda de links físicos paralelos em uma única conexão lógica.
+* **Balanceamento de Carga:** O mecanismo lida com cenários de "Múltiplos Caminhos de Custo Igual", distribuindo o tráfego por várias rotas quando os custos são idênticos.
 
 ## Principais Recursos
-* [cite_start]**Topologia Dinâmica:** Suporta a adição/remoção de roteadores e links em tempo de execução[cite: 293, 297].
-* [cite_start]**Rastreamento de Rotas:** O comando `TRACE` exibe o(s) caminho(s) ideal(is) entre quaisquer dois nós na rede[cite: 291].
-* [cite_start]**Tratamento de Erros:** Valida os padrões Ethernet (10/100/1000 Mbps) e aplica as regras de consistência LACP[cite: 287, 289].
+* [cite_start]**Topologia Dinâmica:** Suporta a adição/remoção de roteadores e links em tempo de execução.
+* [cite_start]**Rastreamento de Rotas:** O comando `TRACE` exibe o(s) caminho(s) ideal(is) entre quaisquer dois nós na rede.
+* [cite_start]**Tratamento de Erros:** Valida os padrões Ethernet (10/100/1000 Mbps) e aplica as regras de consistência LACP.
 
