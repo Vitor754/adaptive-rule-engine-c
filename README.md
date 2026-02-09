@@ -1,24 +1,19 @@
-# Network Topology Optimizer (OSPF & LACP)
+# Algoritmos (OSPF & LACP)
 
-## Context
-Developed as part of the **Algorithms and Data Structures II (CES-11)** course at **Instituto Tecnológico de Aeronáutica (ITA)**.
+## Contexto
+Desenvolvido como parte de **Algotítmos e Estrtura de Dados II (CES-11)** no **Instituto Tecnológico de Aeronáutica (ITA)**.
 
-## Objective
-The goal of this project was to simulate a robust Internet Service Provider (ISP) network topology. The system calculates the most efficient routing paths based on bandwidth costs (mimicking the **OSPF** protocol) and handles physical link aggregation (**LACP**) to increase throughput.
+## Objetivo
+O objetivo deste projeto foi simular uma topologia de rede robusta de um provedor de serviços de Internet (ISP). O sistema calcula os caminhos de roteamento mais eficientes com base nos custos de largura de banda (imitando o protocolo **OSPF**) e gerencia a agregação de links físicos (**LACP**) para aumentar a taxa de transferência.
 
-## Technical Highlights
-* **Language:** C (Focused on low-level memory management and struct optimization).
-* [cite_start]**Graph Algorithms:** Implemented **Dijkstra's Algorithm** logic to find the "Shortest Path" (lowest cost) between routers based on the metric $Cost = ReferenceBandwidth / LinkBandwidth$[cite: 272].
-* [cite_start]**Link Aggregation:** Simulated **LACP** (Link Aggregation Control Protocol) to dynamically sum bandwidths of parallel physical links into a single logical connection[cite: 279].
-* [cite_start]**Load Balancing:** The engine handles "Equal Cost Multi-Path" scenarios, distributing traffic across multiple routes when costs are identical[cite: 277].
+## Destaques Técnicos
+* **Linguagem:** C (Focada em gerenciamento de memória de baixo nível e otimização de estruturas).
+* **Algoritmos de Grafos:** Implementada a lógica do **Algoritmo de Dijkstra** para encontrar o "Caminho Mais Curto" (menor custo) entre roteadores com base na métrica $Custo = LarguraDeBandaDeReferência / LarguraDeBandaDoLink$[cite: 272].
+* **Agregação de Links:** Simulação do **LACP** (Protocolo de Controle de Agregação de Links) para somar dinamicamente as larguras de banda de links físicos paralelos em uma única conexão lógica[cite: 279].
+* **Balanceamento de Carga:** O mecanismo lida com cenários de "Múltiplos Caminhos de Custo Igual", distribuindo o tráfego por várias rotas quando os custos são idênticos[cite: 277].
 
-## Key Features
-* [cite_start]**Dynamic Topology:** Supports adding/removing routers and links in runtime[cite: 293, 297].
-* [cite_start]**Route Tracing:** The `TRACE` command outputs the optimal path(s) between any two nodes in the network[cite: 291].
-* [cite_start]**Error Handling:** Validates Ethernet standards (10/100/1000 Mbps) and enforces LACP consistency rules[cite: 287, 289].
+## Principais Recursos
+* [cite_start]**Topologia Dinâmica:** Suporta a adição/remoção de roteadores e links em tempo de execução[cite: 293, 297].
+* [cite_start]**Rastreamento de Rotas:** O comando `TRACE` exibe o(s) caminho(s) ideal(is) entre quaisquer dois nós na rede[cite: 291].
+* [cite_start]**Tratamento de Erros:** Valida os padrões Ethernet (10/100/1000 Mbps) e aplica as regras de consistência LACP[cite: 287, 289].
 
-## How to Run
-Compile the source code using GCC:
-```bash
-gcc main.c -o network_optimizer
-./network_optimizer
