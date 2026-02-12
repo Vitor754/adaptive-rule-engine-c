@@ -147,8 +147,6 @@ void dfs_busca_caminhos(TipoRede *rede, int u, int idx_destino,
 }
 
 // Ordena os caminhos encontrados (Bubble Sort)
-// Criterio 1: Menor numero de saltos.
-// Criterio 2: Ordem lexicografica dos IDs.
 void ordenar_caminhos() {
     for (int i = 0; i < qtd_caminhos - 1; i++) {
         for (int j = 0; j < qtd_caminhos - i - 1; j++) {
@@ -226,7 +224,7 @@ void router_add(TipoRede *rede) {
 
 // Remove roteador usando Delecao Logica (marca diagonal com -1)
 void router_del(TipoRede *rede, int id) {
-    // 1. ValidaÁ„o (Mesma de antes)
+    // 1. Valida√ß√£o (Mesma de antes)
     if (id < 1 || id > rede->Z || rede->matriz_bandwidth[id-1][id-1] == -1) {
         printf("Roteador %d nao existe\n", id);
         return;
@@ -234,7 +232,7 @@ void router_del(TipoRede *rede, int id) {
 
     int idx = id - 1;
 
-    // Zerar conexıes (Mesmo de antes)
+    // Zerar conex√µes (Mesmo de antes)
     for (int i = 0; i < rede->Z; i++) {
         rede->matriz_bandwidth[idx][i] = 0;
         rede->matriz_bandwidth[i][idx] = 0;
@@ -242,7 +240,7 @@ void router_del(TipoRede *rede, int id) {
         rede->matriz_custo[i][idx] = INT_MAX;
     }
 
-    // MarcaÁ„o LÛgica (Mesmo de antes)
+    // Marca√ß√£o L√≥gica (Mesmo de antes)
     rede->matriz_bandwidth[idx][idx] = -1;
 
     printf("Roteador %d removido\n", id);
@@ -341,11 +339,11 @@ void trace_rota(TipoRede *rede, int id_origem, int id_destino) {
 
         for (int i = 0; i < qtd_caminhos; i++) {
 
-            // Caso 1: Vizinhos (0 saltos intermedi·rios)
+            // Caso 1: Vizinhos (0 saltos intermedi√°rios)
             if (saltos_encontrados[i] == 0) {
                 printf("Comunicacao direta\n");
             }
-            // Caso 2: Rota Indireta (Imprime os intermedi·rios)
+            // Caso 2: Rota Indireta (Imprime os intermedi√°rios)
             else {
                 for (int j = 0; j < saltos_encontrados[i]; j++) {
                     printf("%d", caminhos_encontrados[i][j] + 1); // +1 para ID
@@ -470,3 +468,4 @@ int main(void) {
 
     return 0;
 }
+
